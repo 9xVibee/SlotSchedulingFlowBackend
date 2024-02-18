@@ -64,6 +64,11 @@ export const requestSlot = async (req: Request, res: Response) => {
 
   const physio = await Physio.findOne({ email });
 
+  if (!physio)
+    return res.status(500).json({
+      message: "Physio Not Found",
+    });
+
   let slot = await Slots.findOne({
     createdBy: physio._id,
     $and: [
