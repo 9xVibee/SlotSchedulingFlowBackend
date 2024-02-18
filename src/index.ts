@@ -4,8 +4,10 @@ import { router as patentRouter } from "./routes/patient";
 import { router as adminRouter } from "./routes/admin";
 import { router as physioRouter } from "./routes/physio";
 import { getAllSlots } from "./controllers";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const PORT = 3000;
 
 // middleware
