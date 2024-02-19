@@ -7,13 +7,12 @@ import { getAllSlots } from "./controllers";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
-
 const PORT = 3000;
 
 // middleware
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 // routing
 app.use("/api/patient", patentRouter);
