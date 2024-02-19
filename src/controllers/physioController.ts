@@ -19,7 +19,6 @@ export const createPhysio = async (req: Request, res: Response) => {
 
 // login patient
 export const loginPhysio = async (req: Request, res: Response) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
   const { email, password } = req.body;
 
   const physio: PhysioType | null = await Physio.findOne({
