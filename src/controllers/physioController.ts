@@ -130,6 +130,7 @@ export const isAlreadySubmitted = async (req: Request, res: Response) => {
     weekStart: new Date().toISOString().slice(0, 10),
   });
 
+  res.send("<h1>Hellow from Abhay checking isAlreadySubmitted</h1>");
   return res.status(200).json({
     isExist: slotExist ? true : false,
   });

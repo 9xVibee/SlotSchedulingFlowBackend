@@ -13,7 +13,7 @@ const router = express.Router();
 router.post("/create", createPhysio);
 router.post("/login", loginPhysio);
 router.post("/slots", requestSlot);
-router.get("/is-already-submitted", isAlreadySubmitted);
+router.get("/isalreadysubmitted", isAlreadySubmitted);
 router.post("/getallslots", getAllSlotsPhysio);
 
 export { router };
