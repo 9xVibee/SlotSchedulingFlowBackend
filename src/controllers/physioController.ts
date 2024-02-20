@@ -73,7 +73,23 @@ export const requestSlot = async (req: Request, res: Response) => {
 
       // Add 7 days to the current date
       const futureDate = new Date(currentDate);
-      futureDate.setDate(currentDate.getDate() + DateByDay[key]);
+
+      let num =
+        key === "monady"
+          ? 1
+          : key === "tuesday"
+          ? 2
+          : key === "wednesday"
+          ? 3
+          : key === "thursday"
+          ? 4
+          : key === "friday"
+          ? 5
+          : key === "saturday"
+          ? 6
+          : 0;
+
+      futureDate.setDate(currentDate.getDate() + num);
 
       const futureWeek = new Date(currentDate);
       futureWeek.setDate(currentDate.getDate() + 7);
