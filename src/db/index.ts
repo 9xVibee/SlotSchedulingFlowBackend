@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 require("dotenv").config();
 
-mongoose.connect(
-  "mongodb+srv://abhay19:abhay19@cluster0.2daelgg.mongodb.net/?retryWrites=true&w=majority"
-);
+mongoose.connect("mongodb://localhost:27017/slotscheduling");
 const conn = mongoose.connection;
 
 // loggin message on database connect
@@ -42,7 +40,10 @@ const SlotSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Physio",
   },
-  remark: String,
+  remark: {
+    type: String,
+    default: "",
+  },
   weekStart: String,
   weekEnd: String,
   date: String,

@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import {
   createPhysio,
   getAllSlotsPhysio,
+  isAlreadySubmitted,
   loginPhysio,
   requestSlot,
 } from "../controllers/physioController";
@@ -12,6 +13,7 @@ const router = express.Router();
 router.post("/create", createPhysio);
 router.post("/login", loginPhysio);
 router.post("/slots", requestSlot);
+router.get("/is-already-submitted", isAlreadySubmitted);
 router.post("/getallslots", getAllSlotsPhysio);
 
 export { router };
