@@ -7,7 +7,7 @@ import { getAllSlots } from "./controllers";
 import cors from "cors";
 
 const app = express();
-const PORT = 3000;
+const PORT = 3000 || process.env.PORT;
 
 // middleware
 dotenv.config();
